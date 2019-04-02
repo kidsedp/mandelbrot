@@ -17,6 +17,8 @@ const INIT_BAILOUT = 50;
 // Will hold the data for drawing the Mandelbrot set
 var image;
 
+var paused = false;
+
 /**
  * Called before anything else, by p5.js
  *
@@ -47,7 +49,9 @@ function setup() {
  * to draw.
  */
 function draw() {
-  image.drawNextLine();
+  if (!paused) {
+    image.drawNextLine();
+  }
 }
 
 /**
@@ -57,6 +61,12 @@ function draw() {
 function mousePressed() {
   image.zoomInOn(mouseX / float(width), mouseY / float(height));
   image.reset();
+}
+
+function keyPressed() {
+  if (keyCode === 32) {
+    paused = !paused;
+  }
 }
 
 /**
