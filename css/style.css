@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+/**
+ * the floating info button
+ */
+a#info {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    width: 1em;
+    height: 1em;
+    padding: .25em;
+    margin: .25em;
+
+    background-color: #00bcd4;
+    border-radius: 100%;
+    box-shadow: 0 0 .2em .05em #00bcd4;
+}
+
+/**
+ * The info button should get a little brighter when hovered over
+ */
+#info:hover {
+    background-color: #0ae2ff;
+    box-shadow: 0 0 .2em .05em #0ae2ff;
+}
+
+/**
+ * Utility class for hiding things from the screen
+ */
+.hidden {
+    display: none !important;
+}
