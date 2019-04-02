@@ -44,7 +44,7 @@ class Mandelbrot {
       // Iterate the Mandelbrot function based on c
       let escapeVal = this.findEscapeVal(c);
 
-      stroke(escapeVal * 255 / this.bailout, 255, h < this.bailout ? 255 : 0);
+      stroke(escapeVal * 255 / this.bailout, 255, escapeVal < this.bailout ? 255 : 0);
       point(x, this.y);
     }
 
