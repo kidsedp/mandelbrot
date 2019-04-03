@@ -14,9 +14,13 @@ const INIT_RANGE = 1.5;
 // How many iterations to run before bailing
 const INIT_BAILOUT = 50;
 
+// Key code for the space bar
+const SPACE = 32;
+
 // Will hold the data for drawing the Mandelbrot set
 var image;
 
+// Indicates whether the program should pause rendering
 var paused = false;
 
 /**
@@ -63,8 +67,12 @@ function mousePressed() {
   image.reset();
 }
 
+/**
+ * Event listener for keypress events. If the key is the space bar, causes the
+ * program to pause rendering.
+ */
 function keyPressed() {
-  if (keyCode === 32) {
+  if (keyCode === SPACE) {
     paused = !paused;
   }
 }
